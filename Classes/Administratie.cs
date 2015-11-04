@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace ToetsApplicatie
                 }
             }
 
-            inkomsten.OrderByDescending(i => i.Tijdstip);
+            inkomsten.OrderByDescending(i => i.Tijdstip); //gebruik maken van Icomparable in verhuur en verkoop i.p.v lambda
 
             return inkomsten;
         }
@@ -70,9 +71,22 @@ namespace ToetsApplicatie
                 }
             }
 
-            inkomsten.OrderByDescending(i => i.Tijdstip);
+            inkomsten.OrderByDescending(i => i.Tijdstip); //gebruik maken van Icomparable in verhuur en verkoop i.p.v lambda
 
             return inkomsten;
+        }
+
+        public void Exporteer(string path, BTWTarief tarief)
+        {
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine("Tarieven op basis van het gegeven tarief:");
+                List<IInkomsten> inkomsten = Overzicht(tarief);
+                foreach (IInkomsten i in inkomsten)
+                {
+                    sw.WriteLine("Test");
+                }
+            }
         }
     }
 }

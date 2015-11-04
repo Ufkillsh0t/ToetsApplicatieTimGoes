@@ -200,5 +200,43 @@ namespace ToetsApplicatie
             }
             return "";
         }
+
+        private void btnOverzichtExporteer_Click(object sender, EventArgs e)
+        {
+            if (cbOverzichtBTW.SelectedItem != null)
+            {
+                if (cbOverzichtBTW.SelectedItem.ToString() == "Hoog")
+                {
+                    admin.Exporteer(filename(), BTWTarief.Hoog);
+                }
+                if (cbOverzichtBTW.SelectedItem.ToString() == "Laag")
+                {
+                    admin.Exporteer(filename(), BTWTarief.Laag);
+                }
+                if (cbOverzichtBTW.SelectedItem.ToString() == "Ongespecifeerd")
+                {
+                    admin.Exporteer(filename(), BTWTarief.Ongespecifeerd);
+                }
+            }
+            else
+            {
+                MessageBox.Show("U moet een btw tarief selecteren");
+            }
+        }
+
+        //Voor pad van tekstbestand.
+        public string filename()
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.FileName = "Log.txt";
+            fd.Filter = ".txt file|*.txt";
+            DialogResult d = fd.ShowDialog();
+            string file = "";
+            if (d == DialogResult.OK)
+            {
+                file = fd.FileName;
+            }
+            return file;
+        }
     }
 }
