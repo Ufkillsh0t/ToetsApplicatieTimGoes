@@ -17,7 +17,7 @@ namespace ToetsApplicatie
         public Sportzaal(DateTime tijdstip, int urenVerhuurd)
             : base(tijdstip, urenVerhuurd)
         {
-            this.BTWtarief = BTWTarief.Ongespecifeerd;
+            this.BTWtarief = BTWTarief.Hoog;
             this.prijsPerUur = Convert.ToDecimal(250.00);
         }
 

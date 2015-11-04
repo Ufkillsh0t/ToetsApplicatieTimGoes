@@ -17,7 +17,7 @@ namespace ToetsApplicatie
         public Frisdrank(int aantal)
             : base (aantal)
         {
-            this.BTWtarief = BTWTarief.Ongespecifeerd;
+            this.BTWtarief = BTWTarief.Laag;
             this.prijs = Convert.ToDecimal(5);
         }
 

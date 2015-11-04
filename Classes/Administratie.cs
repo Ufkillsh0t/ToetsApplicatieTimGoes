@@ -26,5 +26,53 @@ namespace ToetsApplicatie
         {
             verkopen.Add(verkoop);
         }
+
+        public List<IInkomsten> Overzicht(DateTime van, DateTime tot)
+        {
+            List<IInkomsten> inkomsten = new List<IInkomsten>();
+            foreach (Verkoop v in verkopen)
+            {
+                if (v.Tijdstip >= van && v.Tijdstip <= tot)
+                {
+                    inkomsten.Add(v);
+                }
+            }
+
+            foreach (Verhuur v in verhuringen)
+            {
+                if (v.Tijdstip >= van && v.Tijdstip <= tot)
+                {
+                    inkomsten.Add(v);
+                }
+            }
+
+            inkomsten.OrderByDescending(i => i.Tijdstip);
+
+            return inkomsten;
+        }
+
+        public List<IInkomsten> Overzicht(BTWTarief tarief)
+        {
+            List<IInkomsten> inkomsten = new List<IInkomsten>();
+            foreach (Verkoop v in verkopen)
+            {
+                if (v.BTWTarief == tarief || tarief == BTWTarief.Ongespecifeerd)
+                {
+                    inkomsten.Add(v);
+                }
+            }
+
+            foreach (Verhuur v in verhuringen)
+            {
+                if (v.BTWTarief == tarief || tarief == BTWTarief.Ongespecifeerd)
+                {
+                    inkomsten.Add(v);
+                }
+            }
+
+            inkomsten.OrderByDescending(i => i.Tijdstip);
+
+            return inkomsten;
+        }
     }
 }

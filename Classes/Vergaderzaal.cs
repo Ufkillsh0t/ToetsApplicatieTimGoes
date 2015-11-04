@@ -17,7 +17,7 @@ namespace ToetsApplicatie
         public Vergaderzaal(DateTime tijdstip, int urenVerhuurd) 
             : base(tijdstip, urenVerhuurd)
         {
-            this.BTWtarief = BTWTarief.Laag;
+            this.BTWtarief = BTWTarief.Hoog;
             this.prijsPerUur = Convert.ToDecimal(40.00);
         }
 
