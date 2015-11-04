@@ -14,7 +14,7 @@ namespace ToetsApplicatie
         public Feestzaal(DateTime tijdstip, int urenVerhuurd)
             : base(tijdstip, urenVerhuurd)
         {
-
+            //this.BTWTarief = BTWTarief.Hoog;
         }
 
         public override string ToString()

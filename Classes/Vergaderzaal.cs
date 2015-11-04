@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToetsApplicatie.Classes
+namespace ToetsApplicatie
 {
     public class Vergaderzaal : Verhuur
     {

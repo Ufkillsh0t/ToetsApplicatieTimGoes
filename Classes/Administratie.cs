@@ -8,6 +8,9 @@ namespace ToetsApplicatie
 {
     public class Administratie
     {
+        public List<Verkoop> verkopen { get; set; }
+        public List<Verhuur> verhuringen { get; set; }
+
         public Administratie()
         {
 
