@@ -8,5 +8,8 @@ namespace ToetsApplicatie
 {
     public enum BTWTarief
     {
+        Ongespecifeerd,
+        Laag,
+        Hoog
     }
 }

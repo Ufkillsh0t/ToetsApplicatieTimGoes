@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BTWTarief.cs" />
+    <Compile Include="Classes\BTWTarief.cs" />
     <Compile Include="Classes\Administratie.cs" />
     <Compile Include="Classes\Feestzaal.cs" />
     <Compile Include="Form1.cs">

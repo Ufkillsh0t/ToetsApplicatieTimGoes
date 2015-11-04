@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace ToetsApplicatie
 {
-    public abstract class Verkoop
+    public abstract class Verkoop : IInkomsten
     {
+        public int Aantal { get; set; }
+        public decimal Bedrag { get; set; }
+        public DateTime TijdStip { get; set; }
+        public BTWTarief BTWTarieg { get; }
+        public decimal Prijs { get; }
+
+        public Verkoop(int aantal)
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

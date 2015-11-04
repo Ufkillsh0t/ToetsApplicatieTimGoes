@@ -8,5 +8,20 @@ namespace ToetsApplicatie
 {
     public class Administratie
     {
+        public Administratie()
+        {
+
+        }
+
+        public void Voegtoe(Verhuur verhuur)
+        {
+
+        
+        }
+
+        public void Voegtoe(Verkoop verkoop)
+        {
+
+        }
     }
 }

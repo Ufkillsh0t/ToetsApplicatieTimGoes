@@ -8,5 +8,8 @@ namespace ToetsApplicatie
 {
     public interface IInkomsten
     {
+        public decimal Bedrag { get; }
+        public BTWTarief BTWTarief { get; }
+        public DateTime Tijdstip { get; }
     }
 }
