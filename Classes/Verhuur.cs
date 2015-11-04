@@ -25,7 +25,7 @@ namespace ToetsApplicatie
 
         public override string ToString()
         {
-            return Tijdstip + " " + UrenVerhuurd;
+            return Tijdstip + " | " + UrenVerhuurd;
         }
     }
 }

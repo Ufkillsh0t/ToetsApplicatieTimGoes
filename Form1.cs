@@ -18,6 +18,10 @@ namespace ToetsApplicatie
         {
             InitializeComponent();
             admin = new Administratie();
+            /*
+            cbOverzichtBTW.Items.Add(BTWTarief.Hoog.ToString());
+            cbOverzichtBTW.Items.Add(BTWTarief.Laag.ToString());
+            cbOverzichtBTW.Items.Add(BTWTarief.Ongespecifeerd.ToString());*/
         }
 
         private void btnNieuweVerhuringToevoegen_Click(object sender, EventArgs e)
@@ -84,6 +88,117 @@ namespace ToetsApplicatie
             {
                 lbVerkopen.Items.Add(v.ToString());
             }
+        }
+
+        private void btnOverzichtDatumbereik_Click(object sender, EventArgs e)
+        {
+            if (cbOverzichtBTW.SelectedItem != null)
+            {
+                if (cbOverzichtBTW.SelectedItem.ToString() == "Ongespecificeerd")
+                {
+                    SorteerBijDatum();
+                }
+                else if (cbOverzichtBTW.SelectedItem.ToString() == "Hoog")
+                {
+                    SorteerOpBTW(BTWTarief.Hoog);
+                }
+                else
+                {
+                    SorteerOpBTW(BTWTarief.Laag);
+                }
+            }
+            else
+            {
+                SorteerBijDatum();
+            }
+        }
+
+        private void SorteerOpBTW(BTWTarief BTWtarief)
+        {
+            List<IInkomsten> inkomsten = admin.Overzicht(BTWtarief);
+            string msgBoxString = "";
+            foreach (IInkomsten i in inkomsten)
+            {
+                if (i is Verkoop)
+                {
+                    Verkoop verkoop = (Verkoop)i;
+                    msgBoxString = msgBoxString + VerkoopString(verkoop) + Environment.NewLine;
+                }
+                else if (i is Verhuur)
+                {
+                    Verhuur verhuur = (Verhuur)i;
+                    msgBoxString = msgBoxString + VerhuurString(verhuur) + Environment.NewLine;
+                }
+                else
+                {
+                    msgBoxString = msgBoxString + "Onbekend item";
+                }
+            }
+            MessageBox.Show(msgBoxString);
+        }
+
+        private void SorteerBijDatum()
+        {
+            List<IInkomsten> inkomsten = admin.Overzicht(dtpOverzichtVan.Value, dtpOverzichtTot.Value);
+            string msgBoxString = "";
+            foreach (IInkomsten i in inkomsten)
+            {
+                if (i is Verkoop)
+                {
+                    Verkoop verkoop = (Verkoop)i;
+                    msgBoxString = msgBoxString + VerkoopString(verkoop) + Environment.NewLine;
+                }
+                else if (i is Verhuur)
+                {
+                    Verhuur verhuur = (Verhuur)i;
+                    msgBoxString = msgBoxString + VerhuurString(verhuur) + Environment.NewLine;
+                }
+                else
+                {
+                    msgBoxString = msgBoxString + "Onbekend item";
+                }
+            }
+            MessageBox.Show(msgBoxString);
+        }
+
+        private string VerkoopString(Verkoop verkoop)
+        {
+            if (verkoop is Frisdrank)
+            {
+                Frisdrank f = (Frisdrank)verkoop;
+                return f.ToString();
+            }
+            if (verkoop is Snack)
+            {
+                Snack snack = (Snack)verkoop;
+                return snack.ToString();
+            }
+            if (verkoop is Sterkedrank)
+            {
+                Sterkedrank sterkedrank = (Sterkedrank)verkoop;
+                return sterkedrank.ToString();
+            }
+            return "";
+        }
+
+        private string VerhuurString(Verhuur verhuur)
+        {
+            if (verhuur is Feestzaal)
+            {
+                Feestzaal f = (Feestzaal)verhuur;
+                return f.ToString();
+            }
+            if (verhuur is Sportzaal)
+            {
+                Sportzaal s = (Sportzaal)verhuur;
+                return s.ToString();
+            }
+            if (verhuur is Vergaderzaal)
+            {
+                Vergaderzaal v = (Vergaderzaal)verhuur;
+                return v.ToString();
+            }
+            return "";
         }
     }
 }

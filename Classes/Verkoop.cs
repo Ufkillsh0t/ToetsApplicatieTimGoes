@@ -26,7 +26,7 @@ namespace ToetsApplicatie
 
         public override string ToString()
         {
-            return Aantal.ToString() + " - " + Tijdstip.ToString();
+            return "Aantal: " + Aantal.ToString() + " | " + Tijdstip.ToString(); 
         }
     }
 }

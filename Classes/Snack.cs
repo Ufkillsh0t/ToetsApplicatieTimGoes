@@ -23,7 +23,7 @@ namespace ToetsApplicatie
 
         public override string ToString()
         {
-            return GetType().Name + ": " + base.ToString();
+            return GetType().Name + " | " + BTWTarief.ToString() + " | " + base.ToString();
         }
     }
 }
