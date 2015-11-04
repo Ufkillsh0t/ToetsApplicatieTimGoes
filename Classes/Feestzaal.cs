@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ToetsApplicatie
 {
-    public class Feestzaal
+    public class Feestzaal : Verhuur
     {
         public BTWTarief BTWTarief { get; }
         public decimal Prijs { get; set; }
 
         public Feestzaal(DateTime tijdstip, int urenVerhuurd)
+            : base(tijdstip, urenVerhuurd)
         {
 
         }

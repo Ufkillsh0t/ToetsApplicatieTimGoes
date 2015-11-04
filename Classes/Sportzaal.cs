@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToetsApplicatie
+namespace ToetsApplicatie.Classes
 {
-    public class Sterkedrank : Verkoop
+    public class Sportzaal : Verhuur
     {
         public BTWTarief BTWTarief { get; }
         public decimal Prijs { get; set; }
 
-        public Sterkedrank(int aantal)
-            : base(aantal)
+        public Sportzaal(DateTime tijdstip, int urenVerhuurd)
+            : base(tijdstip, urenVerhuurd)
         {
 
         }

@@ -11,7 +11,7 @@ namespace ToetsApplicatie
         public int Aantal { get; set; }
         public decimal Bedrag { get; set; }
         public DateTime TijdStip { get; set; }
-        public BTWTarief BTWTarieg { get; }
+        public BTWTarief BTWTarief { get; }
         public decimal Prijs { get; }
 
         public Verkoop(int aantal)

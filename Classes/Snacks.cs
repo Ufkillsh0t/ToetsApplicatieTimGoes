@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToetsApplicatie
+namespace ToetsApplicatie.Classes
 {
-    public class Sterkedrank : Verkoop
+    public class Snacks : Verkoop
     {
         public BTWTarief BTWTarief { get; }
         public decimal Prijs { get; set; }
 
-        public Sterkedrank(int aantal)
+        public Snacks(int aantal)
             : base(aantal)
         {
 
