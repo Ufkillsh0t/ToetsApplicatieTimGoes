@@ -55,8 +55,11 @@ namespace ToetsApplicatie
         public List<IInkomsten> Overzicht(BTWTarief tarief)
         {
             List<IInkomsten> inkomsten = new List<IInkomsten>();
-            foreach (Verkoop v in verkopen)
+            foreach (Verkoop v in verkopen) //Fout gevonden, om een van der reden is het tarief niet zichtbaar in de hoofdklasse maar wel in de subklasse.
             {
+                string test = v.BTWTarief.ToString();
+                string testTarief = tarief.ToString();
+
                 if (v.BTWTarief == tarief || tarief == BTWTarief.Ongespecifeerd)
                 {
                     inkomsten.Add(v);
