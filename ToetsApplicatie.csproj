@@ -48,7 +48,7 @@
     <Compile Include="Classes\Administratie.cs" />
     <Compile Include="Classes\Feestzaal.cs" />
     <Compile Include="Classes\Frisdrank.cs" />
-    <Compile Include="Classes\Snacks.cs" />
+    <Compile Include="Classes\Snack.cs" />
     <Compile Include="Classes\Sportzaal.cs" />
     <Compile Include="Classes\Vergaderzaal.cs" />
     <Compile Include="Form1.cs">

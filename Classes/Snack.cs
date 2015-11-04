@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace ToetsApplicatie
 {
-    public class Vergaderzaal : Verhuur
+    public class Snack : Verkoop
     {
         public BTWTarief BTWTarief { get { return BTWtarief; } }
-        public decimal PrijsPerUur { get { return prijsPerUur; } }
+        public decimal Prijs { get { return prijs; } }
 
         private BTWTarief BTWtarief;
-        private decimal prijsPerUur;
+        private decimal prijs;
 
-        public Vergaderzaal(DateTime tijdstip, int urenVerhuurd) 
-            : base(tijdstip, urenVerhuurd)
+        public Snack(int aantal)
+            : base(aantal)
         {
             this.BTWtarief = BTWTarief.Laag;
-            this.prijsPerUur = Convert.ToDecimal(40.00);
+            this.prijs = Convert.ToDecimal(3);
         }
 
         public override string ToString()
         {
-            return GetType().Name + " " + base.ToString();
+            return GetType().Name + ": " + base.ToString();
         }
     }
 }

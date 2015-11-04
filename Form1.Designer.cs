@@ -107,6 +107,7 @@
             this.btnNieuweVerhuringToevoegen.TabIndex = 3;
             this.btnNieuweVerhuringToevoegen.Text = "Toevoegen";
             this.btnNieuweVerhuringToevoegen.UseVisualStyleBackColor = true;
+            this.btnNieuweVerhuringToevoegen.Click += new System.EventHandler(this.btnNieuweVerhuringToevoegen_Click);
             // 
             // label1
             // 
@@ -144,6 +145,8 @@
             this.cbNieuweVerhuring.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNieuweVerhuring.FormattingEnabled = true;
             this.cbNieuweVerhuring.Items.AddRange(new object[] {
+            "Sportzaal",
+            "Vergaderzaal",
             "Feestzaal"});
             this.cbNieuweVerhuring.Location = new System.Drawing.Point(6, 19);
             this.cbNieuweVerhuring.Name = "cbNieuweVerhuring";
@@ -217,6 +220,7 @@
             this.btnNieuweVerkoopToevoegen.TabIndex = 7;
             this.btnNieuweVerkoopToevoegen.Text = "Toevoegen";
             this.btnNieuweVerkoopToevoegen.UseVisualStyleBackColor = true;
+            this.btnNieuweVerkoopToevoegen.Click += new System.EventHandler(this.btnNieuweVerkoopToevoegen_Click);
             // 
             // label4
             // 
@@ -254,6 +258,8 @@
             this.cbNieuweVerkoop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNieuweVerkoop.FormattingEnabled = true;
             this.cbNieuweVerkoop.Items.AddRange(new object[] {
+            "Frisdrank",
+            "Snack",
             "Sterkedrank"});
             this.cbNieuweVerkoop.Location = new System.Drawing.Point(6, 19);
             this.cbNieuweVerkoop.Name = "cbNieuweVerkoop";

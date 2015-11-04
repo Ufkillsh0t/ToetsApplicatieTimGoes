@@ -10,18 +10,22 @@ namespace ToetsApplicatie
     {
         public int UrenVerhuurd { get; set; }
         public decimal Bedrag { get; set; }
-        public DateTime TijdStip { get; set; }
-        public BTWTarief BTWTarief { get; }
-        public decimal PrijsPerUur { get; }
+        public DateTime Tijdstip { get; set; }
+        public BTWTarief BTWTarief { get { return BTWtarief; } }
+        public decimal PrijsPerUur { get { return prijsPerUur; } }
+
+        private BTWTarief BTWtarief;
+        private decimal prijsPerUur;
 
         public Verhuur(DateTime tijdstip, int urenVerhuurd)
         {
-
+            this.Tijdstip = tijdstip;
+            this.UrenVerhuurd = urenVerhuurd;
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return Tijdstip + " " + UrenVerhuurd;
         }
     }
 }

@@ -8,18 +8,22 @@ namespace ToetsApplicatie
 {
     public class Sterkedrank : Verkoop
     {
-        public BTWTarief BTWTarief { get; }
-        public decimal Prijs { get; set; }
+        public BTWTarief BTWTarief { get { return BTWtarief; } }
+        public decimal Prijs { get { return prijs; } }
+
+        private BTWTarief BTWtarief;
+        private decimal prijs;
 
         public Sterkedrank(int aantal)
             : base(aantal)
         {
-
+            this.BTWtarief = BTWTarief.Hoog;
+            this.prijs = Convert.ToDecimal(10);
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return GetType().Name + ": " + base.ToString();
         }
     }
 }

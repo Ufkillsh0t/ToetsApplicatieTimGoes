@@ -8,18 +8,22 @@ namespace ToetsApplicatie
 {
     public class Sportzaal : Verhuur
     {
-        public BTWTarief BTWTarief { get; }
-        public decimal Prijs { get; set; }
+        public BTWTarief BTWTarief { get { return BTWtarief; } }
+        public decimal PrijsPerUur { get { return prijsPerUur; } }
+
+        private BTWTarief BTWtarief;
+        private decimal prijsPerUur;
 
         public Sportzaal(DateTime tijdstip, int urenVerhuurd)
             : base(tijdstip, urenVerhuurd)
         {
-
+            this.BTWtarief = BTWTarief.Ongespecifeerd;
+            this.prijsPerUur = Convert.ToDecimal(250.00);
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return GetType().Name + " " + base.ToString();
         }
     }
 }

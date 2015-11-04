@@ -8,18 +8,22 @@ namespace ToetsApplicatie
 {
     public class Frisdrank : Verkoop
     {
-        public BTWTarief BTWTarief { get; }
-        public decimal Prijs { get; set; }
+        public BTWTarief BTWTarief { get { return BTWtarief; } }
+        public decimal Prijs { get { return prijs; } }
+
+        private BTWTarief BTWtarief;
+        private decimal prijs;
 
         public Frisdrank(int aantal)
             : base (aantal)
         {
-
+            this.BTWtarief = BTWTarief.Ongespecifeerd;
+            this.prijs = Convert.ToDecimal(5);
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return GetType().Name + ": " + base.ToString();
         }
     }
 }
